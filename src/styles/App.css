@@ -5,14 +5,12 @@
 }
 .Cross-button{
   cursor: pointer;
-  border:1px solid black;
   width: 20px;
-  text-align:center
+  text-align:center;
 }
 .Cross-button:hover{
-  background-color: red;
-  color: white;
-  border: 1px solid red;
+ color: red;
+ 
 }
 @media screen and (max-width:380px){
     .section-1{

@@ -1,18 +1,11 @@
-import React, { useState, useContext } from "react";
-import AppContext from "../contexts/AppContext";
+import React from "react";
+import { FaRegTimesCircle} from "react-icons/fa";
 import data from "../data";
 
 
 const Modal=(props)=> {
-  const [selectedSize, setSelectedSize] = useState(null);
-//   const { cart, setCart } = useContext(AppContext);
-//   const addProductToCart = () => {
-//     const newProduct = {
-//       product: props.product,
-//       size: selectedSize,
-//     };
-//     setCart([...cart, newProduct]);
-//   };
+  
+
   return props.show ? (
     <div
       id="product-modal"
@@ -24,7 +17,7 @@ const Modal=(props)=> {
         background: "white",
         padding: 10,
       }}
-      key={data.length++}
+      
      
     >
       <div
@@ -37,13 +30,12 @@ const Modal=(props)=> {
       >
         <h1>Product Details</h1>
         <div
-         className="Cross-button"
-        
+         className="Cross-button"       
           onClick={() => {
             props.onClose();
           }}
         >
-        <i class="fa-solid fa-xmark"></i>
+       <FaRegTimesCircle/>
         </div>
       </div>
 
@@ -64,10 +56,7 @@ const Modal=(props)=> {
             return (
               <div className="size-option">
                 <button
-                className="size-option"
-                //   onClick={() => {
-                //     setSelectedSize(size.trim());
-                //   }}
+                className="size-option"           
                 >
                   {size}
                 </button>
@@ -85,7 +74,7 @@ const Modal=(props)=> {
         {props.product.strickPrice}
       </div>
       <div style={{ color: "red" }}>{props.product.discount}% OFF</div>
-      {/* <button onClick={addProductToCart}>Add To Cart</button> */}
+      
     </div>
   ) : null;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import myntraLogo from "../icon.jpeg";
 import shoppingCart from "../shopping-cart-solid.svg";
 

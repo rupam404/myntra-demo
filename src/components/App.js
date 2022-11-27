@@ -8,7 +8,7 @@ import data from "../data";
 import AppContext from "../contexts/AppContext";
 
 const App = () => {
-  const [filteredProducts, setFilteredProducts] = useState(data);
+  const [filteredProducts] = useState(data);
   const [Male, setMale] = useState("M");
   const [Female, setFemale] = useState("F");
   const [Folded, setFolded] = useState("");
