@@ -8,7 +8,7 @@ import data from "../data";
 import AppContext from "../contexts/AppContext";
 
 const App = () => {
-  const [allProducts, setAllProducts] = useState(data);
+  
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [Male, setMale] = useState("M");
   const [Female, setFemale] = useState("F");
@@ -23,8 +23,7 @@ const App = () => {
         return product.name.toLowerCase().includes(searchTerm.toLowerCase());
       });
       setSearchResult(newList);
-    }
-    else{
+    } else {
       setSearchResult(filteredProducts);
     }
   };
@@ -32,25 +31,27 @@ const App = () => {
   return (
     <AppContext.Provider
       value={{
-        allProducts: allProducts,
         filteredProducts: filteredProducts,
         setFilteredProducts: setFilteredProducts,
         setSearchResult: setSearchResult,
         searchResult: searchResult,
+        setFemale: setFemale,
+        setMale: setMale,
+        Male: Male,
+        Female: Female,
       }}
     >
       <div id="main">
         <Navbar term={searchTerm} searchKeyWord={searchHandler} />
         <div className="section-1">
-          <Filters
-            setMale={setMale}
-            setFemale={setFemale}
-            setFolded={setFolded}
-            Folded={Folded}
-          />
+          <Filters setFolded={setFolded} Folded={Folded} />
           <div style={{ display: "flex", flexDirection: "column" }}>
-            
-            <Products Male={Male} Female={Female} Folded={Folded} filteredProducts={searchTerm.length < 1 ? filteredProducts:searchResult } />
+            <Products
+              Folded={Folded}
+              filteredProducts={
+                searchTerm.length < 1 ? filteredProducts : searchResult
+              }
+            />
           </div>
         </div>
       </div>

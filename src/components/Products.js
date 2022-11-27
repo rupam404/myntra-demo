@@ -4,11 +4,12 @@ import data from "../data";
 import AppContext from "../contexts/AppContext";
 import Modal from "./Modal";
 
-const Products = ({ Male, Female, Folded, filteredProducts }) => {
+const Products = ({ Folded, filteredProducts }) => {
   const [showModal, setShowModal] = useState(false);
-  const [selectedProduct,setSelectedProduct]=useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const { Male, Female } = useContext(AppContext);
   return (
-    <div 
+    <div
       style={{
         display: "flex",
         flexWrap: "wrap",
@@ -16,7 +17,13 @@ const Products = ({ Male, Female, Folded, filteredProducts }) => {
         marginLeft: 20,
       }}
     >
-       <Modal show={showModal} product={selectedProduct} onClose={()=>{setShowModal(false);}}></Modal>
+      <Modal
+        show={showModal}
+        product={selectedProduct}
+        onClose={() => {
+          setShowModal(false);
+        }}
+      ></Modal>
       {filteredProducts.length === 0 ? (
         <h1>NO ITEM FOUND</h1>
       ) : (
@@ -26,18 +33,16 @@ const Products = ({ Male, Female, Folded, filteredProducts }) => {
             (product.folded === Folded || product.folded === "Y")
           ) {
             return (
-              
+             
               <div
-       
                 style={{ marginRight: 17, marginBottom: 10 }}
                 key={data.length++}
                 onClick={() => {
                   setShowModal(true);
-                  setSelectedProduct(product)
+                  setSelectedProduct(product);
                 }}
               >
-                
-                <img src={product.otherImages[0]} width="200px" />
+                <img src={product.otherImages[0]} width="200px" alt="img" />
                 <div>{product.name}</div>
                 <div>{product.description}</div>
                 <div>{product.finalPrice}</div>
@@ -46,6 +51,7 @@ const Products = ({ Male, Female, Folded, filteredProducts }) => {
                 </div>
                 <div>{product.discount}% OFF</div>
               </div>
+        
             );
           }
         })

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import AppContext from "../contexts/AppContext";
 import "../styles/App.css";
 
-const Filters=({setMale,setFemale,setFolded,Folded})=> {
+const Filters=({setFolded,Folded})=> {
   const [flag,setFlag]=useState(true);
+  const {setFemale,setMale} = useContext(AppContext);
   const setGenderMale = () => {
     setFemale("M");
     setMale("M");
