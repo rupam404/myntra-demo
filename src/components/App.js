@@ -8,7 +8,6 @@ import data from "../data";
 import AppContext from "../contexts/AppContext";
 
 const App = () => {
-  
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [Male, setMale] = useState("M");
   const [Female, setFemale] = useState("F");
@@ -31,10 +30,7 @@ const App = () => {
   return (
     <AppContext.Provider
       value={{
-        filteredProducts: filteredProducts,
-        setFilteredProducts: setFilteredProducts,
-        setSearchResult: setSearchResult,
-        searchResult: searchResult,
+       
         setFemale: setFemale,
         setMale: setMale,
         Male: Male,
