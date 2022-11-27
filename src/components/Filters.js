@@ -52,9 +52,7 @@ const Filters=({setFolded,Folded})=> {
         </div>
       </section>
       <section>
-        <h5>Color</h5>
-        <input type="checkbox" id="color" name="color" value="white" />
-        <label > White</label>
+       
       </section>
       <section style={{ width: "100%", whiteSpace: "nowrap" }}>
         <h5>Categories</h5>
