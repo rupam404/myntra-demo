@@ -5,8 +5,6 @@ import shoppingCart from "../shopping-cart-solid.svg";
 
 
   const Navbar =({term,searchKeyWord})=>{
-   
-
     const getSearchterm=(e)=>{
          searchKeyWord(e.target.value);
     }
