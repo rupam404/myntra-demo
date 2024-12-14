@@ -39,19 +39,15 @@ const App = () => {
     >
       <div id="main">
         <Navbar term={searchTerm} searchKeyWord={searchHandler} />
-        <div className="container g-lg-0 g-sm-0 ">
-          <div className="row g-0">
-          <div className="col-lg-3 col-sm-12 col-12 g-0">
+        <div className="section-1">
           <Filters setFolded={setFolded} Folded={Folded} />
-          </div>
-          <div className="col-lg-9 col-sm-12 col-12" >
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <Products
               Folded={Folded}
               filteredProducts={
                 searchTerm.length < 1 ? filteredProducts : searchResult
               }
             />
-          </div>
           </div>
         </div>
       </div>
