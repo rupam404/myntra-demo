@@ -1,7 +1,7 @@
 import React from "react";
 import myntraLogo from "../icon.jpeg";
 import shoppingCart from "../shopping-cart-solid.svg";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
 
 
   const Navbar =({term,searchKeyWord})=>{
@@ -9,29 +9,25 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
          searchKeyWord(e.target.value);
     }
      return(
-    <nav className="Navbar container g-0"
+    <nav
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
     >
-      <div className="row g-0">
-      <div className="col-2 ">  
-      <div className=" icon-holder g-1">
-        <img src={myntraLogo} alt="logo" width={60} height={60} />
+      <div className=" icon-holder">
+        <img src={myntraLogo} alt="logo" width={70} height={70} />
       </div>
-      </div>
-      <div className="col-8 g-0  d-flex align-items-center justify-content-center"> 
       <form>
-
         
-        <input placeholder="Search For a Product"  className="form-control" value={term} onChange={getSearchterm}></input>
+        <input placeholder="Search For a Product" value={term} onChange={getSearchterm}></input>
        
    
       </form>
-      </div> 
-      <div className="col-2 d-flex align-items-center justify-content-end "> 
-      <div className="cart-holder me-1" >
+      <div className="cart-holder" style={{ position: "relative",marginRight:25}}>
         <img src={shoppingCart} alt="shopping-cart" height={30} width={30} />
         <div className="cart-list-length"></div>
-      </div>
-      </div > 
       </div>
     </nav>
      )
