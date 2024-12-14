@@ -28,7 +28,7 @@ const Filters=({setFolded,Folded})=> {
   }
   return (
     <div className="filter-holder" >
-      <section>
+      <section className="py-3">
         <h5>Gender</h5>
         <div>
           <input
@@ -36,6 +36,7 @@ const Filters=({setFolded,Folded})=> {
             value="male"
             name="gender"
             id="male"
+            className="me-1"
             onClick={setGenderMale}
           ></input>
           <label>Male</label>
@@ -46,17 +47,16 @@ const Filters=({setFolded,Folded})=> {
             value="female"
             name="gender"
             id="female"
+            className="me-1"
             onClick={setGenderFemale}
           ></input>
           <label >Female</label>
         </div>
       </section>
-      <section>
-       
-      </section>
+     
       <section style={{ width: "100%", whiteSpace: "nowrap" }}>
         <h5>Categories</h5>
-        <input type="checkbox" id="folded" name="folded" value="white" onClick={isFolded} />
+        <input type="checkbox" className="me-1" id="folded" name="folded" value="white" onClick={isFolded} />
         <label style={{ width: "100%" }}>
           Folded Sleeve Shirts
         </label>
