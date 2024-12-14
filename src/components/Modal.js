@@ -1,17 +1,21 @@
 import React from "react";
 import { FaRegTimesCircle} from "react-icons/fa";
-
+import data from "../data";
 
 
 const Modal=(props)=> {
   
 
   return props.show ? (
-  
     <div
       id="product-modal"
       style={{
-       
+        position: "fixed",
+        zIndex: 1000,
+        top: "20%",
+        left: "30%",
+        background: "white",
+        padding: 10,
       }}
       
      
@@ -41,16 +45,16 @@ const Modal=(props)=> {
             src={productImage}
             alt="product-img"
             width={100}
-            className="m-2"
+            style={{ marginRight: 20 }}
           />
         );
       })}
       <div  >
-        <h1>Size Chart</h1>
+        <h1>Size Char</h1>
         <div style={{ display: "flex" }}>
           {props.product.productSize.split(",").map((size) => {
             return (
-              <div className="size-option m-1">
+              <div className="size-option">
                 <button
                 className="size-option"           
                 >
@@ -72,7 +76,6 @@ const Modal=(props)=> {
       <div style={{ color: "red" }}>{props.product.discount}% OFF</div>
       
     </div>
-    
   ) : null;
 }
 
