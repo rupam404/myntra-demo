@@ -1,8 +1,15 @@
 
-
-.section-1{
-  display: flex;
+#product-modal{
+  position:fixed;
+  z-index:1000;
+  width:50%;
+  top: 20%;
+  left: 30%;
+  background:#ededed;
+  border-radius: 10px;
+  padding:10px;
 }
+
 .Cross-button{
   cursor: pointer;
   width: 20px;
@@ -12,10 +19,30 @@
  color: red;
  
 }
-@media screen and (max-width:380px){
-    .section-1{
-        display: flex;
-        flex-direction: column;
-      }
-     
+@media screen and (max-width:1008px){
+   
+  #product-modal{
+    position:fixed;
+    z-index:1000;
+    width:75%;
+    top: 20%;
+    left: 12%;
+    background:#ededed;
+    border-radius: 10px;
+    padding:10px;
+  }
 }
+@media screen and (max-width:576px){
+   
+  #product-modal{
+    position:fixed;
+    z-index:1000;
+    width:100%;
+    top: 20%;
+    left: 0%;
+    background:#ededed;
+    border-radius: 10px;
+    padding:5px;
+  }
+}
+
